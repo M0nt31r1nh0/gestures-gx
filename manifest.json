@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Glide GX \u2014 Trackpad Navigation",
+  "version": "1.0.1",
+  "description": "Responsive two-finger back and forward gestures with momentum protection and adjustable sensitivity.",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Glide GX"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "gesture.js",
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ]
+}

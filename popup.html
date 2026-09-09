@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Glide GX</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+<header><span class="mark" aria-hidden="true">↔</span><div><h1>Glide GX</h1><p>Go with the flow.</p></div></header>
+<main>
+
+<section class="card hero">
+  <label class="row hero-row" for="enabled">
+    <span class="row-text"><strong>Trackpad navigation</strong><small>Two-finger swipes move you back and forward</small></span>
+    <span class="switch"><input id="enabled" type="checkbox"><span class="slider" aria-hidden="true"></span></span>
+  </label>
+  <div class="guide">
+    <div class="guide-item"><span class="guide-arrow" aria-hidden="true">←</span><div><b>Back</b><span>Two fingers right</span></div></div>
+    <div class="guide-item"><div><b>Forward</b><span>Two fingers left</span></div><span class="guide-arrow" aria-hidden="true">→</span></div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="row column">
+    <span class="row-text"><strong>Sensitivity</strong></span>
+    <div class="segmented" id="sensitivity" role="group" aria-label="Sensitivity">
+      <button type="button" class="seg-btn" data-value="fast">Fast</button>
+      <button type="button" class="seg-btn" data-value="balanced">Balanced</button>
+      <button type="button" class="seg-btn" data-value="deliberate">Deliberate</button>
+    </div>
+  </div>
+  <label class="row" for="reverse">
+    <span class="row-text"><strong>Reverse direction</strong><small>Flip this if Back and Forward feel swapped</small></span>
+    <span class="switch"><input id="reverse" type="checkbox"><span class="slider" aria-hidden="true"></span></span>
+  </label>
+  <label class="row" for="feedback">
+    <span class="row-text"><strong>Show edge arrows</strong><small>A brief on-page arrow while you swipe</small></span>
+    <span class="switch"><input id="feedback" type="checkbox"><span class="slider" aria-hidden="true"></span></span>
+  </label>
+</section>
+
+<section class="card diagnostics">
+  <div class="diagnostics-head"><span>Page check</span><span class="version">v1.0.1</span></div>
+  <div class="diag-status"><span class="dot" id="diagDot"></span><span id="diagStatusText">Checking this page…</span></div>
+  <dl class="diag-grid" id="diagGrid" hidden>
+    <div><dt>Wheel events</dt><dd id="diagEvents">0</dd></div>
+    <div><dt>Horizontal</dt><dd id="diagHorizontal">0</dd></div>
+    <div><dt>Last X, Y</dt><dd id="diagXY">0, 0</dd></div>
+  </dl>
+  <p class="diag-note" id="diagReason"></p>
+  <p class="diag-note" id="diagNav"></p>
+  <p class="diag-note hint">Swipe on the page, then check again.</p>
+  <button id="check" type="button">Check again</button>
+</section>
+
+</main>
+<p id="status" role="status" aria-live="polite"></p>
+<script src="popup.js"></script>
+</body></html>
